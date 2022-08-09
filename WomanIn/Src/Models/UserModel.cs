@@ -18,7 +18,7 @@ namespace WomanInAPI.Src.Models
         public string CPF_CNPJ { get; set; }
         public string Area { get; set; }
 
-        [JsonIgnore, InverseProperty("FK_Creator")]
+        [JsonIgnore, InverseProperty("Creator")]
         public List<PostModel> MyPosts { get; set; }
 
 
