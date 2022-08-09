@@ -19,7 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Src\Models\" />
     <Folder Include="Src\Context\" />
     <Folder Include="Src\Controllers\" />
     <Folder Include="Src\Repo\Launch\" />
