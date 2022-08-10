@@ -6,10 +6,10 @@ namespace WomanInAPI.Src.Repo
 {
     public interface ICategory
     {
-        Task<List<Category>> PegarTodosTemasAsync();
-        Task<Category> PegarTemaPeloIdAsync(int id);
-        Task NovoTemaAsync(Category category);
-        Task AtualizarTemaAsync(Category category);
-        Task DeletarTemaAsync(int id);
+        Task<List<Category>> GetAllCategoriesAsync();
+        Task<Category> GetCategoryByIdAsync(int id);
+        Task NewCategoryAsync(Category category);
+        Task UpdateCategoryAsync(Category category);
+        Task DeleteCategoryAsync(int id);
     }
 }

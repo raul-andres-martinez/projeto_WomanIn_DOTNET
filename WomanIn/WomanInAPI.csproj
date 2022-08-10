@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Src\Repo\Launch\**" />
+    <Content Remove="Src\Repo\Launch\**" />
+    <EmbeddedResource Remove="Src\Repo\Launch\**" />
+    <None Remove="Src\Repo\Launch\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.13" />
@@ -19,8 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Src\Controllers\" />
-    <Folder Include="Src\Repo\Launch\" />
+    <Folder Include="Src\Repo\Implementation\" />
   </ItemGroup>
 
 </Project>
