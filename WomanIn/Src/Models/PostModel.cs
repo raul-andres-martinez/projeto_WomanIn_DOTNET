@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace WomanInAPI.Src.Models
 {
     [Table("tb_Posts")]
-    public class PostModel
+    public class Post
     {
         #region Atributos
         [Key]
@@ -15,10 +15,10 @@ namespace WomanInAPI.Src.Models
         public string PostDate { get; set; }
 
         [ForeignKey("FK_Creator")]
-        public UserModel Creator { get; set; }
+        public User Creator { get; set; }
 
         [ForeignKey("FK_Category")]
-        public CategoryModel Category { get; set; }
+        public Category Category { get; set; }
         #endregion
     }
 
