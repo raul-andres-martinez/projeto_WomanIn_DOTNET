@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WomanInAPI.Src.Context;
+using WomanInAPI.Src.Repo;
 
 namespace WomanIn
 {
@@ -27,6 +28,9 @@ namespace WomanIn
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<WomanInContext>(opt => opt.UseSqlServer(Configuration["ConnectionStringsDev:DefaultConnection"]));
+
+            services.AddScoped<ICategory, CategoryRepo>();
+
 
             //services.AddCors();
 

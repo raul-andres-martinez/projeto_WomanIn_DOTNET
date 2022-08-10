@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 namespace WomanInAPI.Src.Models
 {
     [Table("tb_Users")]
-    public class UserModel
+    public class User
     {
         #region Atributos
         [Key]
@@ -19,7 +19,7 @@ namespace WomanInAPI.Src.Models
         public string Area { get; set; }
 
         [JsonIgnore, InverseProperty("Creator")]
-        public List<PostModel> MyPosts { get; set; }
+        public List<Post> MyPosts { get; set; }
 
 
         #endregion

@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 namespace WomanInAPI.Src.Models
 {
     [Table("tb_Categories")]
-    public class CategoryModel
+    public class Category
     {
         #region Atributos
         [Key]
@@ -15,7 +15,7 @@ namespace WomanInAPI.Src.Models
         public string Name { get; set; }
 
         [JsonIgnore, InverseProperty("Category")]
-        public List<PostModel> PostCategory { get; set; }
+        public List<Post> PostCategory { get; set; }
 
         #endregion
     }
