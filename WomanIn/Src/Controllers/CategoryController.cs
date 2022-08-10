@@ -33,7 +33,7 @@ namespace WomanInAPI.Src.Repo.Implementation
             return Ok(list);
         }
 
-        [HttpGet("id/{ICategory}")]
+        [HttpGet("id/{idCategory}")]
         public async Task<ActionResult> GetCategoryByIdAsync([FromRoute] int idCategory)
         {
             try
