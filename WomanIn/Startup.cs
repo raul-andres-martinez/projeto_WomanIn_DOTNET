@@ -12,6 +12,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WomanInAPI.Src.Context;
 using WomanInAPI.Src.Repo;
+using WomanInAPI.Src.Repo.Implementation;
 
 namespace WomanIn
 {
@@ -32,7 +33,7 @@ namespace WomanIn
             services.AddScoped<ICategory, CategoryRepo>();
 
 
-            //services.AddCors();
+            services.AddCors();
 
             services.AddControllers();
         }
