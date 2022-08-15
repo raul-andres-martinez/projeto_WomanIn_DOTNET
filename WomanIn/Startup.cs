@@ -31,6 +31,8 @@ namespace WomanIn
             services.AddDbContext<WomanInContext>(opt => opt.UseSqlServer(Configuration["ConnectionStringsDev:DefaultConnection"]));
 
             services.AddScoped<ICategory, CategoryRepo>();
+            services.AddScoped<IPost, PostRepo>();
+
 
 
             services.AddCors();
