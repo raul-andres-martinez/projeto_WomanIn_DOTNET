@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 using WomanInAPI.Src.Models;
 using WomanInAPI.Src.Repo;
+using WomanInAPI.Src.Services;
 
 namespace WomanInAPI.Src.Controllers
 {
@@ -13,18 +15,23 @@ namespace WomanInAPI.Src.Controllers
     {
         #region Attributes 
         private readonly IUser _repo;
+        private readonly IAuthentication _services;
+
         #endregion
 
         #region Constructors
-        public UserController (IUser repo)
+        public UserController (IUser repo, IAuthentication services)
         {
             _repo = repo;
+            _services = services;
         }
         #endregion
 
         #region Methods
       
         [HttpGet("email/{email}")]
+        [Authorize(Roles = "NORMAL,ADMIN")]
+
         public async Task<ActionResult> GetUserByEmailAsync([FromRoute] string email)
         {
             try
@@ -36,7 +43,8 @@ namespace WomanInAPI.Src.Controllers
                 return NotFound(new { Message = ex.Message });
             }
         }
-        [HttpPost]
+        [HttpPost("register/new_user")]
+        [AllowAnonymous]
         public async Task<ActionResult> NewUserAsync([FromBody] User user)
         {
             try
@@ -49,6 +57,21 @@ namespace WomanInAPI.Src.Controllers
                 return BadRequest(new { Message = ex.Message });
             }
         }
+        [HttpPost("login")]
+        [AllowAnonymous]
+        public async Task<ActionResult> LoginAsync([FromBody] User user)
+        {
+            var auxiliar = await _repo.GetUserByEmailAsync(user.Email);
+            if (auxiliar == null) return Unauthorized(new
+            {
+                Message = "E-mail invalido"
+            });
+            if (auxiliar.Password != _services.EncodePassword(user.Password))
+                return Unauthorized(new { Message = "Senha invalida" });
+            var token = "Bearer " + _services.GenerateToken(auxiliar);
+            return Ok(new { User = auxiliar, Token = token });
+        }
+
         [HttpPut]
         public async Task<ActionResult> UpdateUserAsync([FromBody] User user)
         {

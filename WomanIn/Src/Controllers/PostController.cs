@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 using WomanInAPI.Src.Models;
@@ -27,6 +28,7 @@ namespace WomanInAPI.Src.Repo.Implementation
         #region Methods            
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult> GetAllPostsAsync()
         {
             var list = await _repo.GetAllPostsAsync();
@@ -35,6 +37,7 @@ namespace WomanInAPI.Src.Repo.Implementation
         }
 
         [HttpGet("id/{idPost}")]
+        [Authorize]
         public async Task<ActionResult> GetPostByIdAsync([FromRoute] int idPost)
         {
             try
@@ -47,6 +50,7 @@ namespace WomanInAPI.Src.Repo.Implementation
             }
         }
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult> NewPostAsync([FromBody] Post post)
         {
             try
@@ -60,6 +64,7 @@ namespace WomanInAPI.Src.Repo.Implementation
             }
         }
         [HttpPut]
+        [Authorize]
         public async Task<ActionResult> UpdatePostAsync([FromBody] Post post)
         {
             try
@@ -74,6 +79,7 @@ namespace WomanInAPI.Src.Repo.Implementation
         }
 
         [HttpDelete("delete/{idPost}")]
+        [Authorize]
         public async Task<ActionResult> DeletePostAsync([FromRoute] int idPost)
         {
             try
