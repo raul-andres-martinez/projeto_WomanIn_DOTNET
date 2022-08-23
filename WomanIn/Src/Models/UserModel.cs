@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
+using WomanInAPI.Src.Utilities;
 
 namespace WomanInAPI.Src.Models
 {
@@ -17,6 +19,9 @@ namespace WomanInAPI.Src.Models
         public string Password { get; set; }
         public string CPF_CNPJ { get; set; }
         public string Area { get; set; }
+        
+        [Required]
+        public UserType Type { get; set; }
 
         [JsonIgnore, InverseProperty("Creator")]
         public List<Post> MyPosts { get; set; }

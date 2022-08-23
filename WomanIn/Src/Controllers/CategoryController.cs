@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 using WomanInAPI.Src.Models;
@@ -26,6 +27,8 @@ namespace WomanInAPI.Src.Repo.Implementation
         #region Methods            
 
         [HttpGet]
+        [Authorize]
+
         public async Task<ActionResult> GetAllCategoriesAsync()
         {
             var list = await _repo.GetAllCategoriesAsync();
@@ -34,6 +37,8 @@ namespace WomanInAPI.Src.Repo.Implementation
         }
 
         [HttpGet("id/{idCategory}")]
+        [Authorize]
+
         public async Task<ActionResult> GetCategoryByIdAsync([FromRoute] int idCategory)
         {
             try
@@ -46,6 +51,8 @@ namespace WomanInAPI.Src.Repo.Implementation
             }
         }
         [HttpPost]
+        [Authorize]
+
         public async Task<ActionResult> NewCategoryAsync([FromBody] Category category)
         {
             try
@@ -59,6 +66,7 @@ namespace WomanInAPI.Src.Repo.Implementation
             }
         }
         [HttpPut]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult> UpdateCategoryAsync([FromBody] Category category)
         {
             try
@@ -73,6 +81,7 @@ namespace WomanInAPI.Src.Repo.Implementation
         }
 
         [HttpDelete("delete/{idCategory}")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult> DeleteCategoryAsync([FromRoute] int idCategory)
         {
             try

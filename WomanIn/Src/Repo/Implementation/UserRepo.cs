@@ -39,6 +39,7 @@ namespace WomanInAPI.Src.Repo.Implementation
                     Password = user.Password,
                     CPF_CNPJ = user.CPF_CNPJ,
                     Area = user.Area,
+                    Type = user.Type
                 });
             await _context.SaveChangesAsync();
         }
