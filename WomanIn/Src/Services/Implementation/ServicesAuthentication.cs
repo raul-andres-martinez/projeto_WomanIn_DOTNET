@@ -10,10 +10,10 @@ using Microsoft.IdentityModel.Tokens;
 namespace WomanInAPI.Src.Services.Implementation
 {
     /// <summary>
-    /// <para>Resumo: Classe responsavel por implementar IAutenticacao</para>
-    /// <para>Criado por: Generation</para>
+    /// <para>Resumo: Classe responsável por implementar IAutentication</para>
+    /// <para>Criado por: Equipe WomanIn (BdR)</para>
     /// <para>Versão: 1.0</para>
-    /// <para>Data: 17/08/2022</para>
+    /// <para>Data: 13/09/2022</para>
     /// </summary>
     public class ServicesAuthentication : IAuthentication
     {
@@ -33,9 +33,9 @@ namespace WomanInAPI.Src.Services.Implementation
         #region Methods
 
         /// <summary>
-        /// <para>Resumo: Método assíncrono responsavel por criar usuario sem duplicar no banco</para>
+        /// <para>Resumo: Método assíncrono responsável por criar usuário sem duplicar no banco</para>
         /// </summary>
-        /// <param name="usuario">Construtor para cadastrar usuario</param>
+        /// <param name="user">Construtor para cadastrar usuário</param>
         public async Task CreateNoDuplicateUserAsync(User user)
         {
                 var auxiliar = await _repo.GetUserByEmailAsync(user.Email);
@@ -66,9 +66,9 @@ namespace WomanInAPI.Src.Services.Implementation
         }
 
         /// <summary>
-        /// <para>Resumo: Método responsavel por criptografar senha</para>
+        /// <para>Resumo: Método responsável por criptografar senha</para>
         /// </summary>
-        /// <param name="senha">Senha a ser criptografada</param>
+        /// <param name="password">Senha a ser criptografada</param>
         /// <returns>string</returns>
         public string EncodePassword(string password)
         {

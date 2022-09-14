@@ -7,6 +7,12 @@ using WomanInAPI.Src.Utilities;
 
 namespace WomanInAPI.Src.Models
 {
+    /// <summary>
+    /// <para>Resumo: Classe responsável por representar tb_Users no banco de dados.</para>
+    /// <para>Criado por: Equipe WomanIn (BdR)</para>
+    /// <para>Versão: 1.0</para>
+    /// <para>Data: 13/09/2022</para>
+    /// </summary>
     [Table("tb_Users")]
     public class User
     {

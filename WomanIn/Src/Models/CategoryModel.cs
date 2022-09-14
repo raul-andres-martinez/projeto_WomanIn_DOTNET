@@ -5,6 +5,12 @@ using System.Text.Json.Serialization;
 
 namespace WomanInAPI.Src.Models
 {
+    /// <summary>
+    /// <para>Resumo: Classe responsável por representar tb_Categories no banco de dados.</para>
+    /// <para>Criado por: Equipe WomanIn (BdR)</para>
+    /// <para>Versão: 1.0</para>
+    /// <para>Data: 13/09/2022</para>
+    /// </summary>
     [Table("tb_Categories")]
     public class Category
     {

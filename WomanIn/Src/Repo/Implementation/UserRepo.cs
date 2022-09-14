@@ -6,6 +6,12 @@ using WomanInAPI.Src.Models;
 
 namespace WomanInAPI.Src.Repo.Implementation
 {
+    /// <summary>
+    /// <para>Resumo: Classe responsável por implementar IUser</para>
+    /// <para>Criado por: Equipe WomanIn (BdR)</para>
+    /// <para>Versão: 1.0</para>
+    /// <para>Data: 13/09/2022</para>
+    /// </summary>
     public class UserRepo : IUser
     {
         #region Attributes
