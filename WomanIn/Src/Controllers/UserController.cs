@@ -77,7 +77,7 @@ namespace WomanInAPI.Src.Controllers
         {
             try
             {
-                await _repo.NewUserAsync(user);
+                await _services.CreateNoDuplicateUserAsync(user);
                 return Created($"api/User/{user.Email}", user);
             }
             catch (Exception ex)
@@ -101,7 +101,7 @@ namespace WomanInAPI.Src.Controllers
         ///     }
         ///
         /// </remarks>
-        /// <response code="201">Retorna usuario criado</response>
+        /// <response code="201">Retorna usuario logado</response>
         /// <response code="401">E-mail ou senha inválido</response>
         [HttpPost("login")]
         [AllowAnonymous]
