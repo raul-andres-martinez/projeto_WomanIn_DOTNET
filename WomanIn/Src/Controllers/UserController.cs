@@ -37,7 +37,7 @@ namespace WomanInAPI.Src.Controllers
         /// <response code="200">Retorna o usuario</response>
         /// <response code="404">E-mail não existente</response>
         [HttpGet("email/{email}")]
-        [Authorize(Roles = "NORMAL,ADMIN")]
+        [Authorize(Roles = "NORMAL,ADMIN,COMPANY")]
         public async Task<ActionResult> GetUserByEmailAsync([FromRoute] string email)
         {
             try
@@ -58,15 +58,15 @@ namespace WomanInAPI.Src.Controllers
         /// <remarks>
         /// Exemplo de requisição:
         ///
-        /// POST /api/User/{usuario.Email}
-        /// {
-        /// "Name/Nome": "Gustavo Boaz",
-        /// "E-mail": "gustavo@email.com",
-        /// "Password/Senha": "134652",
-        /// "CPF_CNPJ": "12345678901",
-        /// "Area": "Tecnologia"
-        /// "Tipo": "NORMAL"
-        /// }
+        ///     POST /api/User/{usuario.Email}
+        ///     {
+        ///         "Name": "Gustavo Boaz",
+        ///         "Email": "gustavo@email.com",
+        ///         "Password": "134652",
+        ///         "CPF_CNPJ": "12345678901",
+        ///         "Area": "Tecnologia",
+        ///         "Type": "NORMAL"
+        ///     }
         ///
         /// </remarks>
         /// <response code="201">Retorna usuario criado</response>
@@ -94,15 +94,15 @@ namespace WomanInAPI.Src.Controllers
         /// <remarks>
         /// Exemplo de requisição:
         ///
-        /// POST /api/User/login
-        /// {
-        /// "E-mail": "gustavo@email.com",
-        /// "Password/Senha": "134652"
-        /// }
+        ///     POST /api/User/login
+        ///     {
+        ///         "Email": "gustavo@email.com",
+        ///         "Password": "134652"
+        ///     }
         ///
         /// </remarks>
         /// <response code="201">Retorna usuario criado</response>
-        /// <response code="401">E-mail ou senha invalido</response>
+        /// <response code="401">E-mail ou senha inválido</response>
         [HttpPost("login")]
         [AllowAnonymous]
         public async Task<ActionResult> LoginAsync([FromBody] User user)
@@ -110,10 +110,10 @@ namespace WomanInAPI.Src.Controllers
             var auxiliar = await _repo.GetUserByEmailAsync(user.Email);
             if (auxiliar == null) return Unauthorized(new
             {
-                Message = "E-mail invalido"
+                Message = "E-mail inválido"
             });
             if (auxiliar.Password != _services.EncodePassword(user.Password))
-                return Unauthorized(new { Message = "Senha invalida" });
+                return Unauthorized(new { Message = "Senha inválida" });
             var token = "Bearer " + _services.GenerateToken(auxiliar);
             return Ok(new { User = auxiliar, Token = token });
         }
@@ -126,13 +126,13 @@ namespace WomanInAPI.Src.Controllers
         /// <remarks>
         /// Exemplo de requisição:
         ///
-        /// PUT /api/User
-        /// {
-        /// "Name/Nome": "Gustavo Boaz",
-        /// "E-mail": "gustavo@email.com",
-        /// "Password/Senha": "134652",
-        /// "Area": "Tecnologia"
-        /// }
+        ///     PUT /api/User
+        ///     {
+        ///         "Name": "Gustavo Boaz",
+        ///         "Email": "gustavo@email.com",
+        ///         "Password": "134652",
+        ///         "Area": "Tecnologia"
+        ///     }
         ///
         /// </remarks>
         /// <response code="200">Retorna usuário atualizado</response>
@@ -159,7 +159,7 @@ namespace WomanInAPI.Src.Controllers
         /// <remarks>
         /// Exemplo de requisição:
         ///
-        /// DELETE /api/User/delete/{email}
+        ///     DELETE /api/User/delete/{email}
         /// 
         /// </remarks>
         /// <response code="204">Retorna usuário deletada</response>

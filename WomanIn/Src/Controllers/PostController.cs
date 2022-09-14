@@ -71,12 +71,12 @@ namespace WomanInAPI.Src.Repo.Implementation
         /// <remarks>
         /// Exemplo de requisição:
         ///
-        /// POST /api/Post
-        /// {
-        /// "Title/Título": "Vagas para programador .NET"
-        /// "Description/Descrição": "Empresa X, com vaga para ...",
-        /// "Post Date/Data de postagem": "13/09/2022"
-        /// }
+        ///     POST /api/Post
+        ///     {
+        ///         "Title": "Vagas para programador .NET",
+        ///         "Description": "Empresa X, com vaga para ...",
+        ///         "PostDate": "13/09/2022"
+        ///     }
         ///
         /// </remarks>
         /// <response code="201">Retorna postagem criada</response>
@@ -103,12 +103,12 @@ namespace WomanInAPI.Src.Repo.Implementation
         /// <remarks>
         /// Exemplo de requisição:
         ///
-        /// PUT /api/Post
-        /// {
-        /// "Title/Título": "Vagas para programador .NET"
-        /// "Description/Descrição": "Empresa X, com vaga para ...",
-        /// "Post Date/Data de postagem": "13/09/2022"
-        /// }
+        ///     PUT /api/Post
+        ///     {
+        ///         "Title": "Vagas para programador .NET",
+        ///         "Description": "Empresa X, com vaga para ...",
+        ///         "PostDate": "13/09/2022"
+        ///     }
         ///
         /// </remarks>
         /// <response code="200">Retorna postagem atualizada</response>
@@ -136,7 +136,7 @@ namespace WomanInAPI.Src.Repo.Implementation
         /// <remarks>
         /// Exemplo de requisição:
         ///
-        /// DELETE /api/Post/delete/{idPost}
+        ///     DELETE /api/Post/delete/{idPost}
         /// 
         /// </remarks>
         /// <response code="204">Retorna postagem deletado</response>
