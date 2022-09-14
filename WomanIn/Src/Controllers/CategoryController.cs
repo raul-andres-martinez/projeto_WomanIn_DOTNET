@@ -70,10 +70,10 @@ namespace WomanInAPI.Src.Repo.Implementation
         /// <remarks>
         /// Exemplo de requisição:
         ///
-        /// POST /api/Category
-        /// {
-        /// "Name/Nome": "Economia",
-        /// }
+        ///     POST /api/Category
+        ///     {
+        ///         "Name/Nome": "Economia",
+        ///     }
         ///
         /// </remarks>
         /// <response code="201">Retorna tema criado</response>
@@ -101,10 +101,10 @@ namespace WomanInAPI.Src.Repo.Implementation
         /// <remarks>
         /// Exemplo de requisição:
         ///
-        /// PUT /api/Category
-        /// {
-        /// "Name/Nome": "Economia",
-        /// }
+        ///     PUT /api/Category
+        ///     {
+        ///         "Name/Nome": "Economia",
+        ///     }
         ///
         /// </remarks>
         /// <response code="200">Retorna Categoria atualizada</response>
@@ -132,7 +132,7 @@ namespace WomanInAPI.Src.Repo.Implementation
         /// <remarks>
         /// Exemplo de requisição:
         ///
-        /// DELETE /api/Category/delete/{idCategory}
+        ///     DELETE /api/Category/delete/{idCategory}
         /// 
         /// </remarks>
         /// <response code="204">Retorna Categoria deletada</response>

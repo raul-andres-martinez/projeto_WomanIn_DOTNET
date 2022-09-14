@@ -58,15 +58,15 @@ namespace WomanInAPI.Src.Controllers
         /// <remarks>
         /// Exemplo de requisição:
         ///
-        /// POST /api/User/{usuario.Email}
-        /// {
-        /// "Name/Nome": "Gustavo Boaz",
-        /// "E-mail": "gustavo@email.com",
-        /// "Password/Senha": "134652",
-        /// "CPF_CNPJ": "12345678901",
-        /// "Area": "Tecnologia"
-        /// "Tipo": "NORMAL"
-        /// }
+        ///     POST /api/User/{usuario.Email}
+        ///     {
+        ///         "Name": "Gustavo Boaz",
+        ///         "Email": "gustavo@email.com",
+        ///         "Password": "134652",
+        ///         "CPF_CNPJ": "12345678901",
+        ///         "Area": "Tecnologia"
+        ///         "Tipo": "NORMAL"
+        ///     }
         ///
         /// </remarks>
         /// <response code="201">Retorna usuario criado</response>
@@ -94,11 +94,11 @@ namespace WomanInAPI.Src.Controllers
         /// <remarks>
         /// Exemplo de requisição:
         ///
-        /// POST /api/User/login
-        /// {
-        /// "E-mail": "gustavo@email.com",
-        /// "Password/Senha": "134652"
-        /// }
+        ///     POST /api/User/login
+        ///     {
+        ///         "E-mail": "gustavo@email.com",
+        ///         "Password/Senha": "134652"
+        ///     }
         ///
         /// </remarks>
         /// <response code="201">Retorna usuario criado</response>
@@ -126,13 +126,13 @@ namespace WomanInAPI.Src.Controllers
         /// <remarks>
         /// Exemplo de requisição:
         ///
-        /// PUT /api/User
-        /// {
-        /// "Name/Nome": "Gustavo Boaz",
-        /// "E-mail": "gustavo@email.com",
-        /// "Password/Senha": "134652",
-        /// "Area": "Tecnologia"
-        /// }
+        ///     PUT /api/User
+        ///     {
+        ///         "Name/Nome": "Gustavo Boaz",
+        ///         "E-mail": "gustavo@email.com",
+        ///         "Password/Senha": "134652",
+        ///         "Area": "Tecnologia"
+        ///     }
         ///
         /// </remarks>
         /// <response code="200">Retorna usuário atualizado</response>
@@ -159,7 +159,7 @@ namespace WomanInAPI.Src.Controllers
         /// <remarks>
         /// Exemplo de requisição:
         ///
-        /// DELETE /api/User/delete/{email}
+        ///     DELETE /api/User/delete/{email}
         /// 
         /// </remarks>
         /// <response code="204">Retorna usuário deletada</response>
