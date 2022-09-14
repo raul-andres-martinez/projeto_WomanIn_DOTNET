@@ -4,6 +4,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WomanInAPI.Src.Models
 {
+    /// <summary>
+    /// <para>Resumo: Classe responsável por representar tb_Posts no banco de dados.</para>
+    /// <para>Criado por: Equipe WomanIn (BdR)</para>
+    /// <para>Versão: 1.0</para>
+    /// <para>Data: 13/09/2022</para>
+    /// </summary>
     [Table("tb_Posts")]
     public class Post
     {
