@@ -73,9 +73,9 @@ namespace WomanInAPI.Src.Repo.Implementation
         ///
         ///     POST /api/Post
         ///     {
-        ///         "Title/Título": "Vagas para programador .NET"
-        ///         "Description/Descrição": "Empresa X, com vaga para ...",
-        ///         "Post Date/Data de postagem": "13/09/2022"
+        ///         "Title": "Vagas para programador .NET",
+        ///         "Description": "Empresa X, com vaga para ...",
+        ///         "PostDate": "13/09/2022"
         ///     }
         ///
         /// </remarks>
@@ -105,9 +105,9 @@ namespace WomanInAPI.Src.Repo.Implementation
         ///
         ///     PUT /api/Post
         ///     {
-        ///         "Title/Título": "Vagas para programador .NET"
-        ///         "Description/Descrição": "Empresa X, com vaga para ...",
-        ///         "Post Date/Data de postagem": "13/09/2022"
+        ///         "Title": "Vagas para programador .NET",
+        ///         "Description": "Empresa X, com vaga para ...",
+        ///         "PostDate": "13/09/2022"
         ///     }
         ///
         /// </remarks>

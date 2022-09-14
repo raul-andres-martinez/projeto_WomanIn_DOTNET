@@ -72,7 +72,7 @@ namespace WomanInAPI.Src.Repo.Implementation
         ///
         ///     POST /api/Category
         ///     {
-        ///         "Name/Nome": "Economia",
+        ///         "Name": "Economia"
         ///     }
         ///
         /// </remarks>
@@ -103,7 +103,7 @@ namespace WomanInAPI.Src.Repo.Implementation
         ///
         ///     PUT /api/Category
         ///     {
-        ///         "Name/Nome": "Economia",
+        ///         "Name": "Economia"
         ///     }
         ///
         /// </remarks>
