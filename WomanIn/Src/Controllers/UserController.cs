@@ -58,7 +58,7 @@ namespace WomanInAPI.Src.Controllers
         /// <remarks>
         /// Exemplo de requisição:
         ///
-        ///     POST /api/User/{usuario.Email}
+        ///     POST /api/User/register/{usuario.Email}
         ///     {
         ///         "Name": "Gustavo Boaz",
         ///         "Email": "gustavo@email.com",
@@ -71,7 +71,7 @@ namespace WomanInAPI.Src.Controllers
         /// </remarks>
         /// <response code="201">Retorna usuario criado</response>
         /// <response code="401">E-mail já cadastrado</response>
-        [HttpPost("register/new_user")]
+        [HttpPost("register")]
         [AllowAnonymous]
         public async Task<ActionResult> NewUserAsync([FromBody] User user)
         {
