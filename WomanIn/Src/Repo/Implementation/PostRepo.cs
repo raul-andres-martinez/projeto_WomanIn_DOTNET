@@ -38,12 +38,18 @@ namespace WomanInAPI.Src.Repo.Implementation
         }
 
         public async Task<List<Post>> GetAllPostsAsync() {
-            return await _context.Posts.ToListAsync();
+            return await _context.Posts
+                .Include(p => p.Creator)
+                .Include(p => p.Category)
+                .ToListAsync();
         }
 
         public async Task<Post> GetPostByIdAsync(int id) {
             if (!IdExist(id)) throw new Exception("Id da postagem não encontrado");
-            return await _context.Posts.FirstOrDefaultAsync(t => t.Id == id);
+            return await _context.Posts
+                .Include(p => p.Creator)
+                .Include(p => p.Category)
+                .FirstOrDefaultAsync(t => t.Id == id);
 
             // funções auxiliares
             bool IdExist(int id) {
